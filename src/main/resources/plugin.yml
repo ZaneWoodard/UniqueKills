@@ -1,0 +1,14 @@
+name: UniqueKills
+main: com.beastsmc.KablooieKablam.UniqueKills.UniqueKills
+version: 0.2
+commands:
+   ks:
+      description: Displays the kill score of a player.
+      usage: /ks [player]
+      permission: ukills.lookup
+      permission-message: You don't have permissions.
+   topukills:
+      description: Lists the top 10 players.
+      usage: /topukills
+      permission: ukills.top
+      permission-message: You don't have permissions.

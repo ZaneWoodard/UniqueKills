@@ -1,0 +1,19 @@
+mysql:
+  database: LogBlock
+  host: localhost
+  port: 3306
+  username: root
+  password: 4y67Y546#58m
+signs:
+  1:
+    x: 0
+    y: 0
+    z: 0
+  2:
+    x: 0
+    y: 0
+    z: 0
+  3:
+    x: 0
+    y: 0
+    z: 0
