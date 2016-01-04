@@ -68,7 +68,7 @@ public class MySQLHandler
 
     for (PreparedStatement stmt : dstmts) {
       stmt.setString(1, name);
-      ResultSet rs = stmt.executeQuery();
+      rs = stmt.executeQuery();
       if (rs.first()) {
         int deaths = rs.getInt("deaths");
         total -= deaths;
@@ -99,8 +99,3 @@ public class MySQLHandler
     return scores;
   }
 }
-
-/* Location:           /Users/zane/KillScore.jar
- * Qualified Name:     com.beastsmc.KablooieKablam.UniqueKills.MySQLHandler
- * JD-Core Version:    0.6.2
- */

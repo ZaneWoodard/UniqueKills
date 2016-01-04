@@ -65,8 +65,3 @@ public class UKillsCommandExecutor
     return true;
   }
 }
-
-/* Location:           /Users/zane/KillScore.jar
- * Qualified Name:     com.beastsmc.KablooieKablam.UniqueKills.UKillsCommandExecutor
- * JD-Core Version:    0.6.2
- */

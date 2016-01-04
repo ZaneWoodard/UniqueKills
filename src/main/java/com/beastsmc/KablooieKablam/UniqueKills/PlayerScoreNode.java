@@ -23,8 +23,3 @@ public class PlayerScoreNode
     this.kills += increment;
   }
 }
-
-/* Location:           /Users/zane/KillScore.jar
- * Qualified Name:     com.beastsmc.KablooieKablam.UniqueKills.PlayerScoreNode
- * JD-Core Version:    0.6.2
- */

@@ -28,8 +28,3 @@ public class UniqueKills extends JavaPlugin
     getCommand("ks").setExecutor(new UKillsCommandExecutor(this));
   }
 }
-
-/* Location:           /Users/zane/KillScore.jar
- * Qualified Name:     com.beastsmc.KablooieKablam.UniqueKills.UniqueKills
- * JD-Core Version:    0.6.2
- */
