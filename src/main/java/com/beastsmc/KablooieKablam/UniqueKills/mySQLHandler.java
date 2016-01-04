@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class mySQLHandler
+public class MySQLHandler
 {
   private final String url;
   private final String user;
@@ -23,7 +23,7 @@ public class mySQLHandler
   private static final String getAllPlayerKillsNether = "select count(distinct victim) as kills,(select playername from `lb-players` where playerid=killer) as playername from `lb-world_nether-kills` where (select ip from `lb-players` where playerid=victim)!='' and (select ip from `lb-players` where playerid=killer)!='' group by killer order by count(distinct victim) desc;";
   private static final String getAllPlayerKillsEnd = "select count(distinct victim) as kills,(select playername from `lb-players` where playerid=killer) as playername from `lb-world_the_end-kills` where (select ip from `lb-players` where playerid=victim)!='' and (select ip from `lb-players` where playerid=killer)!='' group by killer order by count(distinct victim) desc;";
 
-  public mySQLHandler(String db, String host, String port, String username, String password)
+  public MySQLHandler(String db, String host, String port, String username, String password)
     throws SQLException
   {
     this.url = String.format("jdbc:mysql://%s:%s/%s", new Object[] { host, port, db });
@@ -101,6 +101,6 @@ public class mySQLHandler
 }
 
 /* Location:           /Users/zane/KillScore.jar
- * Qualified Name:     com.beastsmc.KablooieKablam.UniqueKills.mySQLHandler
+ * Qualified Name:     com.beastsmc.KablooieKablam.UniqueKills.MySQLHandler
  * JD-Core Version:    0.6.2
  */

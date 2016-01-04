@@ -7,12 +7,12 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-public class ukillsCommandExecutor
+public class UKillsCommandExecutor
   implements CommandExecutor
 {
   private final UniqueKills plugin;
 
-  public ukillsCommandExecutor(UniqueKills plugin)
+  public UKillsCommandExecutor(UniqueKills plugin)
   {
     this.plugin = plugin;
   }
@@ -67,6 +67,6 @@ public class ukillsCommandExecutor
 }
 
 /* Location:           /Users/zane/KillScore.jar
- * Qualified Name:     com.beastsmc.KablooieKablam.UniqueKills.ukillsCommandExecutor
+ * Qualified Name:     com.beastsmc.KablooieKablam.UniqueKills.UKillsCommandExecutor
  * JD-Core Version:    0.6.2
  */
