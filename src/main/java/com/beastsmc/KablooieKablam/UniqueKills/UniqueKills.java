@@ -1,30 +1,38 @@
 package com.beastsmc.KablooieKablam.UniqueKills;
 
-import java.sql.SQLException;
-import org.bukkit.Bukkit;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class UniqueKills extends JavaPlugin
-  implements Listener
-{
-  public MySQLHandler mysql;
+import javax.persistence.PersistenceException;
 
-  public void onEnable()
-  {
-    saveDefaultConfig();
-    try {
-      this.mysql = new MySQLHandler(
-        getConfig().getString("mysql.database"), 
-        getConfig().getString("mysql.host"), 
-        getConfig().getString("mysql.port"), 
-        getConfig().getString("mysql.username"), 
-        getConfig().getString("mysql.password"));
+public class UniqueKills extends JavaPlugin implements Listener {
+
+    public CommandCallbackHandler commandCallbackHandler;
+    public MySQLHandler mysql;
+
+    public void onEnable()
+    {
+        commandCallbackHandler = new CommandCallbackHandler();
+        saveDefaultConfig();
+        setupDatabase();
+        getCommand("ks").setExecutor(new UKillsCommandExecutor(this));
     }
-    catch (SQLException e) {
-      e.printStackTrace();
-      Bukkit.getPluginManager().disablePlugin(this);
+
+    private void setupDatabase() {
+        try {
+            getDatabase().find(Kill.class).findRowCount();
+        } catch (PersistenceException ex) {
+            getLogger().info("Installing database for " + getDescription().getName() + " due to first time usage");
+            installDDL();
+        }
     }
-    getCommand("ks").setExecutor(new UKillsCommandExecutor(this));
-  }
+    @Override
+    public List<Class<?>> getDatabaseClasses() {
+        List<Class<?>> list = new ArrayList<>();
+        list.add(Kill.class);
+        return list;
+    }
 }
